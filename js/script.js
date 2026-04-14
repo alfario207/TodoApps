@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault()
         addTodo()
     })
-
     loadData()
 })
 
@@ -36,6 +35,7 @@ function addTodo() {
     const todoObject = generateObject(generateID, textTodo, timestamp, false)
     todos.push(todoObject)
 
+    saveData()
     document.dispatchEvent(new Event(RENDER))
 }
 
